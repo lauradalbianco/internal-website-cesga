@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="CSS/navigationbar.css">
+    <link rel="stylesheet" href="CSS/formstyle.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="header.html"><img src="IMAGE/cesga_logo.png" alt="Logo"></a>
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            User Management
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="user_management.html">User Management</a></li>
+                            <li><a class="dropdown-item" href="add_employee.html">Add Employee</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Course Management
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="course_management.html">Course Management</a></li>
+                            <li><a class="dropdown-item" href="add_courses.html">Add Course</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="indicators.html">Indicators</a></li>
+                <li><a href="csv_export.html">CSV Export</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-toggle d-lg-none">
+            <button class="btn" type="button" id="sidebarCollapse">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+        <div class="exit">
+
+            <a href="login.html"> <i class="bi bi-box-arrow-right" title="Exit"></i></a>
+        </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <nav id="navbar">
+            <button class="btn-close" id="sidebarClose">&times;</button>
+            <ul>
+                <li><a href="user_management.html">User Management</a></li>
+                <li><a href="add_employee.html">Add Employee</a></li>
+                <li><a href="course_management.html">Course Management</a></li>
+                <li><a href="add_courses.html">Add Course</a></li>
+                <li><a href="indicators.html">Indicators</a></li>
+                <li><a href="csv_export.html">CSV Export</a></li>
+                <li>
+                    <a href="login.html"> <i class="bi bi-box-arrow-right" title="Exit"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="formsize">
+        <div class="container mt-4 mb-4 custom-container">
+            <div class="row">
+                <div class="col">
+                    <h2 style="color: #005497; font-weight: bold; text-align: center;">Search</h2>
+                </div>
+            </div>
+
+            <form name="Search" id="Search" method="post">
+                <div class="form-group row">
+                    <div class="col">
+                        <label class="labelstyle" for="keyword">Last name or first name:</label>
+                        <input class="form-control" name="keyword" type="text" id="keyword" />
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label class="labelstyle" for="situacion">Status:</label>
+                        <select id="select_situacion" class="form-control" name="situacion">
+                            <option value="">All</option>
+                            <option value="1" selected>Active</option>
+                            <option value="0">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="departamento" class="labelstyle">Department:</label>
+                        <select class="form-control" name="departamento" id="departamento">
+                            <option value="" selected> Select one</option>
+                            <option value="Dirección">Dirección</option>
+                            <option value="Secretaría y Administración">Secretaría y Administración</option>
+                            <option value="Sistemas">Sistemas</option>
+                            <option value="Comunicaciones">Comunicaciones</option>
+                            <option value="Aplicaciones">Aplicaciones</option>
+                            <option value="GIS">GIS</option>
+                            <option value="e-Learning">e-Learning</option>
+                            <option value="Transferencia de Tecnología">Transferencia de Tecnología</option>
+                            <option value="Promoción y Comunicación">Promoción y Comunicación</option>
+                            <option value="Conserjería">Conserjería</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="fecha_inicio" class="labelstyle">Start date:</label>
+                        <input class="form-control" type="date" id="fecha_inicio" name="fecha_inicio" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="fecha_fin" class="labelstyle">End date:</label>
+                        <input class="form-control" type="date" id="fecha_fin" name="fecha_fin" />
+                    </div>
+                </div>
+
+                <div class="alert alert-danger" role="alert" id="dateAlert">
+                    Start date must be earlier than End date.
+                </div>
+
+                <div class="form-group row justify-content-between">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary w-100" type="button" id="searchButton"
+                            style="background-color: #005497;">
+                            Search
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-outline-secondary w-100" type="reset" name="reset">Delete</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="row my-5" id="resultado"></div>
+        </div>
+    </div>
+    <footer>
+    </footer>
+
+    <script>
+        document.getElementById('sidebarCollapse').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+
+        document.getElementById('sidebarClose').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.remove('active');
+        });
+
+        document.getElementById('searchButton').addEventListener('click', function () {
+            // Ottieni le date
+            const fechaInicio = new Date(document.getElementById('fecha_inicio').value);
+            const fechaFin = new Date(document.getElementById('fecha_fin').value);
+
+            // Ottieni il div di avviso
+            const dateAlert = document.getElementById('dateAlert');
+
+            if (fechaInicio > fechaFin) {
+                dateAlert.style.display = 'block';
+            } else {
+                dateAlert.style.display = 'none';
+                alert("Valid dates, form submitted.");
+            }
+        });
+    </script>
+</body>
+
+</html>

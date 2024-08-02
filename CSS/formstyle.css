@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.custom-container {
+    height: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px #005497;
+}
+
+.formsize {
+    width: 880px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #005497;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: center;
+    padding-right: 25px;
+}
+
+.btn-primary {
+    background-color: #005497;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0a4575;
+}
+
+.btn-outline-secondary {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    color: #005497;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f2f2f2;
+}
+
+.labelstyle {
+    color: #005497;
+}
+
+#dateAlert {
+    display: none;
+}
+
+.section_employee {
+    border: 2px solid #005497;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .formsize {
+        width: auto;
+        margin-top: 80px;
+    }
+
+    .container {
+        padding: 10px;
+        height: auto;
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
+
+    .btn-primary,
+    .btn-outline-secondary {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        margin-bottom: 20px;
+    }
+
+    #fecha_inicio {
+        margin-bottom: 20px;
+    }
+
+    #select_situacion {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .formsize {
+        margin-top: 80px;
+    }
+}
+
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+    .formsize {
+        margin-top: 80px;
+    }
+}

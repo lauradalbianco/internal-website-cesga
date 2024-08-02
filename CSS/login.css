@@ -1,0 +1,31 @@
+.login-box {
+    border-radius: 20px;
+    box-shadow: 0 8px 16px #005497;
+    padding: 60px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 300%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #005497;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.form-label {
+    color: #005497;
+    font-weight: bold;
+}
+
+.buttonlogin {
+    font-size: 20px;
+    background: radial-gradient(circle, white  , #005497);
+    color: black;
+    font-weight: bold;
+    border-color: #005497;
+    border-radius: 8px;
+}

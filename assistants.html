@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management</title>
+    <link rel="stylesheet" href="CSS/navigationbar.css">
+    <link rel="stylesheet" href="CSS/tablestyle.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="header.html"><img src="IMAGE/cesga_logo.png" alt="Logo"></a>
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            User Management
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="user_management.html">User Management</a></li>
+                            <li><a class="dropdown-item" href="add_employee.html">Add Employee</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Course Management
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="course_management.html">Course Management</a></li>
+                            <li><a class="dropdown-item" href="add_courses.html">Add Course</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="indicators.html">Indicators</a></li>
+                <li><a href="csv_export.html">CSV Export</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-toggle d-lg-none">
+            <button class="btn" type="button" id="sidebarCollapse">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+        <div class="exit">
+
+            <a href="login.html"> <i class="bi bi-box-arrow-right" title="Exit"></i></a>
+        </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <nav id="navbar">
+            <button class="btn-close" id="sidebarClose">&times;</button>
+            <ul>
+                <li><a href="user_management.html">User Management</a></li>
+                <li><a href="add_employee.html">Add Employee</a></li>
+                <li><a href="course_management.html">Course Management</a></li>
+                <li><a href="add_courses.html">Add Course</a></li>
+                <li><a href="indicators.html">Indicators</a></li>
+                <li><a href="csv_export.html">CSV Export</a></li>
+                <li>
+                    <a href="login.html"> <i class="bi bi-box-arrow-right" title="Exit"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th style="color: #005497; font-weight: bold; font-size: 20px">Surname</th>
+                <th style="color: #005497; font-weight: bold; font-size: 20px">Name</th>
+                <th style="color: #005497; font-weight: bold; font-size: 20px">Actions</th>
+                <th style="font-weight: bold; font-size: 20px"><a style="color: #005497;" href="add_assistant.html"><i
+                            class="bi bi-person-fill-add"></i></a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <h2 style="color: #005497; font-weight: bold; text-align: center;" id="assistants">
+                Assistants</h2>
+            <p style="color: #408bc9; text-align: center; margin-top: 0px; font-size: 25px;" id="cursos">
+                nome del corso</p>
+            <tr>
+                <td>Surname</td>
+                <td>Name</td>
+                <td>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-danger" id="buttoncoursedelete" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Delete
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title fs-5" id="exampleModalLabel" style="color:#005497;">DELETE
+                                        ASSISTANT</h2>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to remove Álvaro as an assistant for the course - COURSE NAME?
+                                    <br><br>
+
+                                    - This action is irreversible. <br>
+                                    - You will not be able to recover the data.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-secondary"
+                                        data-bs-dismiss="modal">NO</button>
+                                    <button type="button" class="btn btn-danger">YES</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td style="font-weight: bold; font-size: 20px"><a style="color: #005497;" href="add_assistant.html"><i
+                            class="bi bi-person-fill-add"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <footer>
+    </footer>
+
+    <script>
+        document.getElementById('sidebarCollapse').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+
+        document.getElementById('sidebarClose').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.remove('active');
+        });
+    </script>
+</body>
+
+</html>
